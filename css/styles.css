@@ -1,0 +1,218 @@
+
+.menu-contenedor {
+  display: flex;
+  background-color: #1d3557;
+  position: relative;
+  height: 7vh;
+    
+}
+
+.imagen-de-bienvenida { 
+  grid-area: imagen-de-bienvenida; 
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.imagen-entrada{
+  max-height: 70vh;
+  max-width: 100%;
+  display: block;
+}
+.img-anime{
+  max-height: 70vh;
+  max-width: 100%;
+  margin: 20px;
+}
+.img-series{
+  max-height: 70vh;
+  max-width: 100%;
+  margin: 20px;
+}
+
+
+.contenedor-categ {
+  display: flex;
+  justify-content: center;
+  background-color: #2a5c5e;
+  margin-bottom: 20px;
+}
+
+body{
+  background-color: #457b9d;
+  font-family: 'Roboto', sans-serif;
+}
+.pregunta{
+  text-align: center;
+  color: white;
+}
+.cont-pregunta{
+  display: flex;
+  align-items: center;
+}
+.listado-general { grid-area: listado-general;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  margin: 20px;
+}
+.miniatura{
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  }
+.cajita{
+  width: 170px;
+  display: block;
+  text-align: center;
+  color: white;
+  margin: 20px;
+  }
+
+  .contenedor-buscador{
+    color: white;
+    margin: 10px;
+  }
+  .barra{
+    width: 50vw;
+  }
+  
+.formulario-al-detalle{
+  display: none;
+  border: 3px solid red;
+  width: auto;
+  height: auto;
+  background-color: teal;
+  position: fixed;
+  z-index: 1;
+  top: 10vh;
+  left:10vh;
+  margin-right: 20px;
+  border-radius: 20px;
+    
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 550px) {
+  .descripcion-detalle{
+    font-size: 8px;
+    }
+    .foto-detalle-mod{
+      max-width: 100%;
+      min-width: 30px;
+      margin-right: 1px;
+      
+    }
+    
+}
+@media screen and (min-device-width: 549px) and (max-device-width: 768px) {
+  .descripcion-detalle{
+    font-size: 12px;
+  }
+
+  .foto-detalle-mod{
+    width: 10vw;
+    
+  }
+}
+@media screen and (min-width: 769px) {
+  .descripcion-detalle{
+    font-size: 15px;
+    width: 50vw;
+  }
+  .foto-detalle-mod{
+    width: 20vh;
+    
+  }
+  
+}
+.nombre-detalle{
+  font-weight: bold;
+  }
+
+  .foto-detalle{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    }
+.detalles-texto{
+  
+  width: auto;
+  margin-left: 20px;
+  text-align: center;
+  display: flex;
+  align-content: space-between;
+  
+  
+}
+.contenedor-detalles{
+  display: flex;
+  justify-content: center;
+  align-items:stretch;
+  
+  
+  
+}
+.centrar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+}
+.equis{
+  width: 6vw;
+  max-width: 35px;
+  
+  text-align: right;
+}
+.alDetalle{
+  display: block;
+  justify-content: right;
+  position: absolute;
+  right: 0;
+
+}
+
+.boton-detalle{
+  border-radius: 5px;
+  max-width: 70%; 
+  
+}
+.centrar-boton{
+  display: flex;
+  justify-content: center;
+
+}
+.producto-detalle{
+  display: block;
+}
+.carrito-icon { grid-area: carrito-icon; }
+
+.menu-titulo { grid-area: menu-titulo; }
+
+
+
+
+.img-footer{
+    
+  width: 8vw;
+  height: 10vh;
+       
+}
+footer{
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  
+}
+a:hover {
+  
+  box-shadow: inset -1px 3px 8px 5px #1F87FF;}
+
+.nombre,.social{
+  
+  width: 8vw;
+  padding: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

@@ -1,0 +1,74 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
+  gap: 0px 0px;
+}
+
+.menu-contenedor { grid-area: 1 / 1 / 2 / 8; }
+
+.menu-titulo { grid-area: 1 / 4 / 2 / 5; }
+
+.carrito-icon { grid-area: 1 / 7 / 2 / 8; }
+
+.contenedor-factura { grid-area: 2 / 1 / 8 / 8; }
+
+.cont-info-pago {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.9fr 0.1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . ."
+    ". titulo-pago titulo-pago titulo-pago ."
+    ". nombre-pago nombre-pago nombre-pago ."
+    ". correo-pago correo-pago correo-pago ."
+    ". tarjeta-pago tarjeta-pago tarjeta-pago ."
+    ". fechaCVV fechaCVV fechaCVV ."
+    ". fechaCVV fechaCVV fechaCVV ."
+    ". fechaCVV fechaCVV fechaCVV ."
+    ". . boton-pagar . .";
+  grid-area: 3 / 3 / 7 / 7;
+}
+
+.titulo-pago { grid-area: titulo-pago; }
+
+.nombre-pago { grid-area: nombre-pago; }
+
+.correo-pago { grid-area: correo-pago; }
+
+.tarjeta-pago { grid-area: tarjeta-pago; }
+
+.fechaCVV {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    "fecha-ven cvv .";
+  grid-area: fechaCVV;
+}
+
+.fecha-ven { grid-area: fecha-ven; }
+
+.cvv { grid-area: cvv; }
+
+.boton-pagar { grid-area: boton-pagar; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+s

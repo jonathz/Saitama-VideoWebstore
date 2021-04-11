@@ -1,0 +1,70 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.8fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "menu-contenedor menu-contenedor menu-contenedor menu-contenedor"
+    "contenedor-lista-carrito contenedor-lista-carrito contenedor-lista-carrito contenedor-lista-carrito"
+    "contenedor-total contenedor-total contenedor-total contenedor-total";
+}
+
+.menu-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    ". . menu-titulo . carrito-icon";
+  grid-area: menu-contenedor;
+}
+
+.menu-titulo { grid-area: menu-titulo; }
+
+.carrito-icon { grid-area: carrito-icon; }
+
+.contenedor-lista-carrito {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-area: contenedor-lista-carrito;
+}
+
+.contenedor-total {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "total-lista total-lista total-lista"
+    "boton-pagar boton-pagar boton-pagar";
+  grid-area: contenedor-total;
+}
+
+.total-lista { grid-area: total-lista; }
+
+.boton-pagar { grid-area: boton-pagar; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

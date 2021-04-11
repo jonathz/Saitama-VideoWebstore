@@ -1,0 +1,120 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.8fr 1fr;
+  gap: 10px 0px;
+  grid-template-areas:
+    "menu-contenedor menu-contenedor menu-contenedor menu-contenedor"
+    "cont-selec listado-general listado-general listado-general"
+    "cont-selec listado-general listado-general listado-general";
+}
+
+.menu-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    ". . menu-titulo . carrito-icon";
+  grid-area: menu-contenedor;
+}
+
+.menu-titulo { grid-area: menu-titulo; }
+
+.carrito-icon { grid-area: carrito-icon; }
+
+.listado-general { grid-area: listado-general;
+  display: flex;
+  flex-direction: column; }
+  .miniatura{
+    height: 50px;
+  }
+
+.cont-selec {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". anime-selecc ."
+    ". series-selecc .";
+  grid-area: cont-selec;
+}
+
+.anime-selecc { grid-area: anime-selecc; }
+
+.series-selecc { grid-area: series-selecc; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+}
+
+.alDetalle { grid-area: 1 / 1 / 6 / 7; }
+
+.foto-detalle { grid-area: 3 / 2 / 4 / 3; }
+
+.descrip-detalle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    ". nombre-detalle nombre-detalle ."
+    ". . . ."
+    ". precio-detalle precio-detalle ."
+    ". descripcion-detalle descripcion-detalle ."
+    ". boton-detalle . .";
+  grid-area: 2 / 4 / 5 / 6;
+}
+
+.nombre-detalle { grid-area: nombre-detalle; }
+
+.precio-detalle { grid-area: precio-detalle; }
+
+.descripcion-detalle { grid-area: descripcion-detalle; }
+
+.boton-detalle { grid-area: boton-detalle; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body{
+  background-color: grey;
+}
