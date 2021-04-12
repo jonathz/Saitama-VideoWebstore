@@ -3,7 +3,7 @@
   display: flex;
   background-color: #1d3557;
   position: relative;
-  height: 7vh;
+  justify-content: center;
     
 }
 
@@ -28,7 +28,10 @@
   max-width: 100%;
   margin: 20px;
 }
-
+.img-inicio{
+  width: 200px;
+  height: 100px  ;
+}
 
 .contenedor-categ {
   display: flex;
@@ -49,11 +52,20 @@ body{
   display: flex;
   align-items: center;
 }
-.listado-general { grid-area: listado-general;
+.carrito{
+  width: 50px;
+  position: fixed;
+  right: 0;
+  z-index: 2;
+  margin: 20px;
+}
+.listado-general {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
   margin: 20px;
+  background-color:#135a86 ;
+  border-radius: 20px;
 }
 .miniatura{
   height: 100px;
@@ -160,6 +172,7 @@ body{
 .equis{
   width: 6vw;
   max-width: 35px;
+  cursor: pointer;
   
   text-align: right;
 }
@@ -184,9 +197,6 @@ body{
 .producto-detalle{
   display: block;
 }
-.carrito-icon { grid-area: carrito-icon; }
-
-.menu-titulo { grid-area: menu-titulo; }
 
 
 
