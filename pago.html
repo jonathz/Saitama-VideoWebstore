@@ -9,23 +9,22 @@
 
 </head>
 <body>
-    <div class="grid-container">
-        <div class="menu-contenedor"></div>
-        <div class="menu-titulo"></div>
-        <div class="carrito-icon"></div>
-        <div class="contenedor-factura"></div>
+    
+        <div class="menu-contenedor"><img src="./images/inicio.jpg" class="img-inicio" srcset=""></div>
+        <div class="contenedor-factura">
         <div class="cont-info-pago">
-          <div class="titulo-pago"></div>
-          <div class="nombre-pago"></div>
-          <div class="correo-pago"></div>
-          <div class="tarjeta-pago"></div>
+          <div class="titulo-pago">Informacion de Pago</div>
+          <div class="nombre-pago"><input type="text" id="nombre" placeholder="Ingresa tu Nombre completo"></div>
+          <div class="correo-pago"><input type="email"  id="correo" placeholder="Ingresa tu correo"></div>
+          <div class="tarjeta-pago"><input type="number" name="" id="creditCard" placeholder="Ingresa tu tarjeta de credito"> </div>
           <div class="fechaCVV">
-            <div class="fecha-ven"></div>
-            <div class="cvv"></div>
+            <div class="fecha-ven" >F. Vencimiento MM/AA <input type="number" id="fechaVen"></div>
+            <div class="cvv">CVV<input type="number" id="codeCVV"></div>
           </div>
-          <div class="boton-pagar"></div>
+          <div class="boton-pagar">Pagar</div>
         </div>
       </div>
-    
+      
+  <script src="./pago.js"></script>
 </body>
 </html>

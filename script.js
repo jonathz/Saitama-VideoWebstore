@@ -1,35 +1,25 @@
-//el carrito tiene que tener un array de objetos
-//y metodos de añadir producto (push)
-//metodo sumar todos los objetos
-//eliminar con splice  
-
-// Use splice(startPosition, deleteCount)
-
-// array.splice(-1,1)
-
-// productosElejidos.agregarAlCarro()
-
-
 class Carrito {
     constructor() {
         this.elementosAgregados = []
     }
-agregarAlCarro(nuevoDato){
-    localStorage.clear()
+guardarLista(nuevoDato){
+    
     this.elementosAgregados.push(nuevoDato)
-    console.log(this.elementosAgregados)
-    localStorage.setItem("carritoEnUso",this.elementosAgregados)
+    localStorage.setItem("listaTotal", JSON.stringify(this.elementosAgregados))
+
+}
+adicionarProducto(nuevoDato, i ){
+    
+    localStorage.setItem("Item"+i, JSON.stringify(nuevoDato))
 
 }
 sumatoria(){
-    //total/ = total de todas las series
-    //que este calcule el precio todas
     let acum = 0
     for (let product of this.elementosAgregados){
         acum += product.precioProduccion         
     } return acum
 }
-eliminar(aRemover){
+eliminarDeLista(aRemover){
     let clickeado = this.getAttribute ("index")
     //vaciar
     if (clickeado == 0) {
@@ -41,9 +31,9 @@ eliminar(aRemover){
         }
        //toca re imprimir los valores de la lista despues al terminar
 }
+
 }
 let datos
-let prueba = {nombre:"pablo", precio:"15000"}
 var productosElejidos = new Carrito
 let produccionBusqueda = document.getElementById('barra')
 let botonBuscar = document.getElementById ('botonBuscar')
@@ -164,6 +154,7 @@ if(window.location.search=="?contenido=series"){
             let cajas = (document.querySelectorAll('.cajita').length)
             
             for (let i = 0; i < cajas; i++) {
+                
                 document.querySelectorAll(".cajita")[i].onclick = alDetalle
                 
                 
@@ -196,7 +187,7 @@ if(window.location.search=="?contenido=series"){
         //Tabla de precios
         let precioCapitulo = 0
 
-            if(episodios > 0 && episodios <= 1){ 
+            if(episodios >= 0 && episodios <= 1){ 
                 precioCapitulo = (numRandom(10, 20)) * 1000
             }
             if(episodios > 5 && episodios <= 8){
@@ -229,8 +220,8 @@ if(window.location.search=="?contenido=series"){
             document.querySelector('.precio-detalle').innerHTML = `Precio: $${rellenoBusqueda[cajaSeleccionada].precioSerie}`
             document.querySelector('.descripcion-detalle').innerHTML = `${rellenoBusqueda[cajaSeleccionada].sinopsis}`
             document.querySelector('.episodios').innerHTML = `Episodios:${episodios}`
-            datos = {nombre: nombreEnLaCaja , precioCapitulo , episodios, precioProduccion : precioCapitulo * episodios }
-            console.log(datos)
+            datos = {nombre: nombreEnLaCaja , image_url:this.children[2].src, precioCapitulo , episodios, precioProduccion : precioCapitulo * episodios }
+            
     document.querySelector('.boton-detalle').addEventListener
     ('click', compiladorDatos)
     
@@ -238,9 +229,11 @@ if(window.location.search=="?contenido=series"){
 function cerrarVentana(){
     document.querySelector('.formulario-al-detalle').style.display = 'none';
 }
-
+let item = 0
 
 function compiladorDatos (){
-    productosElejidos.agregarAlCarro(datos)
+    productosElejidos.guardarLista(datos)
+    productosElejidos.adicionarProducto(datos,item)
+    item++
     
 }

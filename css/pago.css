@@ -1,74 +1,81 @@
-html, body, .grid-container { height: 100%; margin: 0; }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
-  gap: 0px 0px;
+body { 
+  background-color: grey;
 }
 
-.menu-contenedor { grid-area: 1 / 1 / 2 / 8; }
+.img-inicio{
+  width: 200px;
+  height: 100px  ;
 
-.menu-titulo { grid-area: 1 / 4 / 2 / 5; }
+}
+.menu-contenedor {
+  display: flex;
+  justify-content: center ;
+  
+}
 
-.carrito-icon { grid-area: 1 / 7 / 2 / 8; }
-
-.contenedor-factura { grid-area: 2 / 1 / 8 / 8; }
+.contenedor-factura { display: flex;
+justify-content: center; 
+}
 
 .cont-info-pago {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.9fr 0.1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . . . ."
-    ". titulo-pago titulo-pago titulo-pago ."
-    ". nombre-pago nombre-pago nombre-pago ."
-    ". correo-pago correo-pago correo-pago ."
-    ". tarjeta-pago tarjeta-pago tarjeta-pago ."
-    ". fechaCVV fechaCVV fechaCVV ."
-    ". fechaCVV fechaCVV fechaCVV ."
-    ". fechaCVV fechaCVV fechaCVV ."
-    ". . boton-pagar . .";
-  grid-area: 3 / 3 / 7 / 7;
+  /* background-color: rgb(37, 37, 37); */
+  background-color: rgb(100, 98, 98);
+  width: 300px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between  ;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px;
+  color: white;
 }
 
-.titulo-pago { grid-area: titulo-pago; }
+.titulo-pago { 
+  
+  font-size: 25px;
+}
 
-.nombre-pago { grid-area: nombre-pago; }
 
-.correo-pago { grid-area: correo-pago; }
+#nombre, #correo,#creditCard{
+  width: 200px;
+}
 
-.tarjeta-pago { grid-area: tarjeta-pago; }
+
+
 
 .fechaCVV {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . ."
-    "fecha-ven cvv .";
-  grid-area: fechaCVV;
+  display: flex;
+  
+}
+#fechaVen{
+  width: 30px;
+}
+#codeCVV{
+  width: 30px;
 }
 
-.fecha-ven { grid-area: fecha-ven; }
-
-.cvv { grid-area: cvv; }
-
-.boton-pagar { grid-area: boton-pagar; }
 
 
-/* For presentation only, no need to copy the code below */
-.grid-container * {
-  border: 1px solid red;
-  position: relative;
-}
 
-.grid-container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-s
+.boton-pagar { 
+width: 100px;
+height: 30px;
+border: 1px solid rgb(8, 177, 8);
+background-color: rgb(8, 177, 8);
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+
+ }
+ .boton-pagar:hover { 
+  
+  background-color: rgb(8, 212, 8);
+    
+   }
+
+
+
+

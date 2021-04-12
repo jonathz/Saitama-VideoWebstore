@@ -1,70 +1,143 @@
-html, body, .grid-container { height: 100%; margin: 0; }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1.8fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "menu-contenedor menu-contenedor menu-contenedor menu-contenedor"
-    "contenedor-lista-carrito contenedor-lista-carrito contenedor-lista-carrito contenedor-lista-carrito"
-    "contenedor-total contenedor-total contenedor-total contenedor-total";
+body{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
-
+.espacio-principal{
+  display: block;
+  height: auto;
+}
 .menu-contenedor {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . . . ."
-    ". . . . ."
-    ". . menu-titulo . carrito-icon";
-  grid-area: menu-contenedor;
+  display: flex;
+  justify-content: center ;
+  
 }
-
-.menu-titulo { grid-area: menu-titulo; }
-
-.carrito-icon { grid-area: carrito-icon; }
+.img-carrito-caja{
+  display: block;
+  position: absolute;
+  right: 0 ;
+  margin-right: 50px;
+  
+}
+.img-inicio{
+  
+  width: 200px;
+  height: 100px  ;
+  
+}
+.img-carrito{
+ 
+ width: 30px;
+ height: 30px  ;
+}
+.impresion-principal{
+  height: 500px;
+}
+.menu-titulo { 
+  height: 50px;
+  width:  50px;
+ }
 
 .contenedor-lista-carrito {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . .";
-  grid-area: contenedor-lista-carrito;
+  display: block;
+  height: auto;
 }
 
 .contenedor-total {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "total-lista total-lista total-lista"
-    "boton-pagar boton-pagar boton-pagar";
-  grid-area: contenedor-total;
+  display: block;
+}
+.contenedor-titulos {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(70, 70, 70);
+}
+.contenedor-titulos p {
+  width: 100px;
 }
 
-.total-lista { grid-area: total-lista; }
+.episodios-num, .precio-cap, .episodiosNum,.precio-prod,.eliminar {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eliminar-img{
+  width: 50px;
+  cursor: pointer;
+}
+.boton-vaciar{
+border: 1px solid rgb(70, 70, 70);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100px;
+height: 50px;
+background-color: rgb(219, 54, 54);
+cursor: pointer;
+}
+.boton-vaciar:hover{
+  background-color: rgb(255, 112, 112);
+ }
+.total-lista { 
+  height: 50px;
+  width: 50px;
+ }
 
-.boton-pagar { grid-area: boton-pagar; }
+.boton-pagar { 
+    border: 1px solid rgb(70, 70, 70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(82, 218, 111);
+    cursor: pointer;
+    color: white;
+   }
+   .boton-pagar:hover{
+    background-color: rgb(110, 248, 140);
+   }
+  a{
+  text-decoration:none;
+ }
+ .contenedor-lista-carrito{
+   width: 510px;
+   
+ }
+ .contenedor-impresion{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(70, 70, 70);
+  border: 5px double rgb(146, 146, 146);
 
 
-/* For presentation only, no need to copy the code below */
-.grid-container * {
-  border: 1px solid red;
-  position: relative;
+ }
+ .total-caja{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   font-size: 20px;
+ }
+ 
+ .botones-finales{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+ }
+ .nombre{
+  height: auto;
+ }
+.nombre-foto{
+  height: auto;
+  width: 100px;
+  text-align: center;
+}
+img.miniatura{
+  width: 100px;
+  height: auto;
 }
 
-.grid-container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
