@@ -7,14 +7,44 @@
 
 // array.splice(-1,1)
 
+// productosElejidos.agregarAlCarro()
 
-class Carrito{
-    elementosAgregados = []
+
+class Carrito {
+    constructor() {
+        this.elementosAgregados = []
+    }
+agregarAlCarro(nuevoDato){
+    localStorage.clear()
+    this.elementosAgregados.push(nuevoDato)
+    console.log(this.elementosAgregados)
+    localStorage.setItem("carritoEnUso",this.elementosAgregados)
 
 }
-
-
-
+sumatoria(){
+    //total/ = total de todas las series
+    //que este calcule el precio todas
+    let acum = 0
+    for (let product of this.elementosAgregados){
+        acum += product.precioProduccion         
+    } return acum
+}
+eliminar(aRemover){
+    let clickeado = this.getAttribute ("index")
+    //vaciar
+    if (clickeado == 0) {
+        this.elementosAgregados = []
+        //re imprimir
+    }else{
+        this.elementosAgregados.splice(clickeado,1)
+        //re imprimir
+        }
+       //toca re imprimir los valores de la lista despues al terminar
+}
+}
+let datos
+let prueba = {nombre:"pablo", precio:"15000"}
+var productosElejidos = new Carrito
 let produccionBusqueda = document.getElementById('barra')
 let botonBuscar = document.getElementById ('botonBuscar')
 botonBuscar.addEventListener ('click', busqueda)
@@ -144,11 +174,12 @@ if(window.location.search=="?contenido=series"){
     }
 
     async function alDetalle(){
-        
+
         document.querySelector('.formulario-al-detalle').style.display = 'block'
         document.querySelector('.equis').addEventListener('click', cerrarVentana)
         let cajaSeleccionada = this.getAttribute ("index")
         let episodios
+        let nombreEnLaCaja = this.children[0].innerHTML
         if (this.getAttribute("categ") == "series"){
             episodiosURL = rellenoBusqueda[cajaSeleccionada].episodios + "/episodes"
             episodios = await obtenerContenido(episodiosURL)
@@ -163,6 +194,7 @@ if(window.location.search=="?contenido=series"){
         
         
         //Tabla de precios
+        let precioCapitulo = 0
 
             if(episodios > 0 && episodios <= 1){ 
                 precioCapitulo = (numRandom(10, 20)) * 1000
@@ -193,13 +225,22 @@ if(window.location.search=="?contenido=series"){
         rellenoBusqueda[cajaSeleccionada].precioSerie = rellenoBusqueda[cajaSeleccionada].precioCapitulo * episodios
         
             document.querySelector('.foto-detalle').innerHTML = `<img class="foto-detalle-mod" src="${this.children[2].src}" > </img>`
-            document.querySelector('.nombre-detalle').innerHTML = `${this.children[0].innerHTML}`
+            document.querySelector('.nombre-detalle').innerHTML = `${nombreEnLaCaja}`
             document.querySelector('.precio-detalle').innerHTML = `Precio: $${rellenoBusqueda[cajaSeleccionada].precioSerie}`
             document.querySelector('.descripcion-detalle').innerHTML = `${rellenoBusqueda[cajaSeleccionada].sinopsis}`
             document.querySelector('.episodios').innerHTML = `Episodios:${episodios}`
-                 
-    }
-    function cerrarVentana(){
-        document.querySelector('.formulario-al-detalle').style.display = 'none';
-    }
+            datos = {nombre: nombreEnLaCaja , precioCapitulo , episodios, precioProduccion : precioCapitulo * episodios }
+            console.log(datos)
+    document.querySelector('.boton-detalle').addEventListener
+    ('click', compiladorDatos)
     
+}
+function cerrarVentana(){
+    document.querySelector('.formulario-al-detalle').style.display = 'none';
+}
+
+
+function compiladorDatos (){
+    productosElejidos.agregarAlCarro(datos)
+    
+}
