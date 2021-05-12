@@ -182,7 +182,9 @@ if(window.location.search=="?contenido=series"){
             
             }
         
-        
+            if (episodios==0){
+                episodios = 1
+            }
         
         //Tabla de precios
         let precioCapitulo = 0
@@ -211,7 +213,9 @@ if(window.location.search=="?contenido=series"){
                 
                 precioCapitulo =  numRandom(150, 300)
             }
-                
+            if (rellenoBusqueda[cajaSeleccionada].precioSerie == 0){
+                rellenoBusqueda[cajaSeleccionada].precioSerie = 15000
+            }//casos excepcionales
         rellenoBusqueda[cajaSeleccionada].precioCapitulo = precioCapitulo
         rellenoBusqueda[cajaSeleccionada].precioSerie = rellenoBusqueda[cajaSeleccionada].precioCapitulo * episodios
         
