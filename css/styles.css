@@ -19,7 +19,8 @@
   display: block;
 }
 .img-anime{
-  height: 51vh;
+  max-height: 70vh;
+  max-width: 100%;
   margin: 20px;
 }
 .img-series{
