@@ -10,6 +10,7 @@ The video products information came from TVMAZE API and JIKAN API.
 
 ## Local deployment
 Just open index.html 
+
 Enjoy 
 
 :smile:
