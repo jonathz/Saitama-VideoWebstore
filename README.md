@@ -9,4 +9,7 @@ This project was developed in Vanilla JavaScript and Vanilla CSS.
 The video products information came from TVMAZE API and JIKAN API.
 
 ## Local deployment
-Just open index.html :D
+Just open index.html 
+Enjoy 
+
+:smile:
