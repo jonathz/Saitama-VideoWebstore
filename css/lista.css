@@ -109,7 +109,7 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   background-color: rgb(70, 70, 70);
-  border: 5px double rgb(146, 146, 146);
+  border: 10px double rgb(146, 146, 146);
 
 
  }
