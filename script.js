@@ -43,6 +43,7 @@ function numRandom(min, max) {
 }
 
 const URLANIME = "https://corsproxybypass.herokuapp.com/https://api.jikan.moe/v3/user/nekomata1037/animelist/all"
+const URLSERIES = "https://corsproxybypass.herokuapp.com/http://api.tvmaze.com/shows"
 
 async function obtenerContenido(url){
         return new Promise ((resolve,reject)=> {
