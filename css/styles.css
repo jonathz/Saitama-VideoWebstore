@@ -81,6 +81,9 @@ body {
   color: white;
   margin: 20px;
 }
+.cajita:hover {
+  transform: scale(1.2);
+}
 
 .contenedor-buscador {
   color: white;
