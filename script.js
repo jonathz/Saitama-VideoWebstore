@@ -49,7 +49,8 @@ function numRandom(min, max) {
 
 const URLANIME =
   "https://corsproxybypass.herokuapp.com/https://api.jikan.moe/v3/user/nekomata1037/animelist/all";
-const URLSERIES = "https://api.tvmaze.com/shows";
+const URLSERIES =
+  "https://corsproxybypass.herokuapp.com/https://api.tvmaze.com/shows";
 
 async function obtenerContenido(url) {
   return new Promise((resolve, reject) => {
@@ -64,8 +65,7 @@ let listaSeries;
 let listaAnime;
 let rellenoBusqueda = [];
 async function listas() {
-  if (listaGeneral.childElementCount > 1)
-    listaSeries = await obtenerContenido(URLSERIES);
+  listaSeries = await obtenerContenido(URLSERIES);
   listaAnime = await obtenerContenido(URLANIME);
   listaAnime = listaAnime.anime;
   spinnerWrapper.style.display = "none";
