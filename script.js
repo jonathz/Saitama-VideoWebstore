@@ -46,6 +46,7 @@ botonBuscar.addEventListener("click", busqueda);
 function numRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 const URLANIME =
   "https://corsproxybypass.herokuapp.com/https://api.jikan.moe/v3/user/nekomata1037/animelist/all";
 const URLSERIES =
