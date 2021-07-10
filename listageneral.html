@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saitama VideoStore</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/loadingAnimation.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet"> 
     
@@ -22,7 +23,13 @@
           <input type="search" class="barra" name="" id="barra">
           <input type="submit" id="botonBuscar" value="Buscar">
         </div>
-        <div class="listado-general"></div>
+        <div class="listado-general" id="listaGeneral">
+
+          <div class='spinner-wrapper'>
+            <div class="spinner"></div>
+          </div>
+
+        </div>
         <div class="cont-selec">
           <div class="anime-selecc"></div>
           <div class="series-selecc"></div>
