@@ -41,7 +41,31 @@
 
     </footer>
     
-   
+   <script>
+        const URLSERIES = "https://corsproxybypass.herokuapp.com/http://api.tvmaze.com/shows"
+        const URLANIME = "https://corsproxybypass.herokuapp.com/https://api.jikan.moe/v3/user/nekomata1037/animelist/all"
+
+async function obtenerContenido(url){
+        return new Promise ((resolve,reject)=> {
+            fetch(`${url}`)
+            .then(data=> data.json())
+            .then(data=>resolve(data))
+            .catch (err=>reject(err))
+    })
+}
+
+let listaSeries
+let listaAnime
+let rellenoBusqueda = []
+async function listas() {
+    listaSeries = await obtenerContenido(URLSERIES)
+    listaAnime = await obtenerContenido(URLANIME)
+    listaAnime = listaAnime.anime
+    
+    
+}
+       listas()
+    </script>
 
 </body>
 </html>
